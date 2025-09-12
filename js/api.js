@@ -1,4 +1,7 @@
-const API_BASE = "http://127.0.0.1:60619/api/v1";
+// const API_BASE = "http://127.0.0.1:60619/api/v1";
+const API_BASE = (window.__ENV && window.__ENV.API_URL) ? window.__ENV.API_URL : 'http://127.0.0.1:60619/api/v1';
+// To set API_URL in production, include an env.js that sets window.__ENV = { API_URL: 'https://your-backend.onrender.com/api/v1' };
+
 
 async function getMe() {
   const token = localStorage.getItem("token");
