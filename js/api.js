@@ -34,7 +34,7 @@
 
 const API_BASE = import.meta.env.VITE_API_URL;
 
-To set API_URL in production, include an env.js that sets window.__ENV = { API_URL: 'https://your-backend.onrender.com/api/v1' };
+//To set API_URL in production, include an env.js that sets window.__ENV = { API_URL: 'https://your-backend.onrender.com/api/v1' };
 
 async function getMe() {
   const token = localStorage.getItem("token");
