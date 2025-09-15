@@ -1,21 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Books</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book Management System</title>
+<link rel="stylesheet" href="style.css" />
 </head>
-<body>  
-  <p>Welcome to the Book Management System</p>
-  <a href="signup.html">Signup</a>
+<body>
+
+<nav>
+  <button onclick="showSection('login')">Login</button>
+  <button onclick="showSection('signup')">Sign Up</button>
+  <button onclick="showSection('books')">Books</button>
+  <button onclick="showSection('mybooks')">My Books</button>
+  <button onclick="showSection('admin_books')">Admin Books</button>
+  <button onclick="showSection('admin_users')">Admin Users</button>
+</nav>
+
+<div id="login" class="page-section">
+  <!-- Login form contents replicated from login.html, trimmed to essentials -->
+  <form id="login-form">
+    <h2>Login</h2>
+    <label>Username <input id="username" name="username" required/></label>
+    <label>Password <input id="password" name="password" type="password" required/></label>
+    <button type="submit">Login</button>
+    <p id="message"></p>
+  </form>
+</div>
+
+<div id="signup" class="page-section" style="display:none;">
+  <!-- Sign up form contents from signup.html -->
+  <form id="signup-form">
+    <h2>Sign Up</h2>
+    <label>Username <input id="signup-username" name="username" required/></label>
+    <label>Email <input id="email" name="email" type="email" required/></label>
+    <label>Password <input id="signup-password" name="password" type="password" required/></label>
+    <button type="submit">Sign Up</button>
+    <p id="signup-message"></p>
+  </form>
+</div>
+
+<div id="books" class="page-section" style="display:none;">
+  <h2>Books</h2>
+  <div id="books-list"></div>
+  <button id="logout-btn-books">Logout</button>
+</div>
+
+<div id="mybooks" class="page-section" style="display:none;">
+  <h2>My Borrowed Books</h2>
+  <div id="mybooks-list"></div>
+  <button id="logout-btn-mybooks">Logout</button>
+</div>
+
+<div id="admin_books" class="page-section" style="display:none;">
+  <h2>Admin Books</h2>
+  <div id="admin-books-list"></div>
+  <form id="add-book-form">
+    <h3>Add Book</h3>
+    <input id="title" placeholder="Title" required />
+    <input id="author" placeholder="Author" required />
+    <input id="genre" placeholder="Genre" />
+    <button type="submit">Add Book</button>
+  </form>
+  <button id="logout-btn-adminbooks">Logout</button>
+</div>
+
+<div id="admin_users" class="page-section" style="display:none;">
+  <h2>Admin Users</h2>
+  <div id="admin-users-list"></div>
+  <button id="logout-btn-adminusers">Logout</button>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.page-section').forEach(
+    s => (s.style.display = s.id === id ? 'block' : 'none')
+  );
+}
+</script>
+
 </body>
 </html>
