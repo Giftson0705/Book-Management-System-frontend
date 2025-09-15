@@ -7,6 +7,7 @@ const booksList = document.getElementById("books-list");
 async function loadBooks() {
   await hydrateRole(); // role from /auth/me
   const res = await fetch(`${API_BASE}/books`, {
+    method: "GET",
     headers: { Authorization: `Bearer ${token}` }
   });
   const books = await res.json();
