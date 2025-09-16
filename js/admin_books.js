@@ -46,7 +46,7 @@ function renderBooks(books) {
 }
 
 // ---------- Add new book ----------
-addBookForm.onclick("submit", async (e) => {
+addBookForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
