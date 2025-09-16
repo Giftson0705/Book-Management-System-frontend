@@ -11,7 +11,7 @@ if (!token) window.lsocation.href = "login.html";
 const usersList = document.getElementById("admin-users-list");
 
 async function fetchUsers() {
-  await hydrateRole(); // make sure role is fresh
+  // await hydrateRole(); // make sure role is fresh
   const res = await fetch(ADMIN_USERS_API, {
     headers: { Authorization: `Bearer ${token}` }
   });
