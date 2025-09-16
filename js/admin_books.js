@@ -10,6 +10,8 @@ if (!token) {
 
 const booksList = document.getElementById("admin-books-list");
 const addBookForm = document.getElementById("add-book-form");
+const loader = document.getElementById("loader");
+loader.classList.remove("hidden");   // before API call starts
 
 // ---------- Fetch all books ----------
 async function fetchBooks() {
@@ -124,6 +126,8 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 
 // Load books on page load
 fetchBooks();
+
+loader.classList.add("hidden");      // inside finally block (after API finishes)
 
 
 

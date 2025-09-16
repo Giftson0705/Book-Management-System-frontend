@@ -7,6 +7,9 @@ if (!token) {
 }
 
 const myBooksList = document.getElementById("mybooks-list");
+const loader = document.getElementById("loader");
+loader.classList.remove("hidden");   // before API call starts
+
 
 // ---------- Fetch my borrowed books ----------
 async function fetchMyBooks() {
@@ -68,3 +71,5 @@ document.getElementById("logout-btn").addEventListener("click", () => {
 
 // load borrowed books on page load
 fetchMyBooks();
+
+loader.classList.add("hidden");      // inside finally block (after API finishes)

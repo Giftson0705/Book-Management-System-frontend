@@ -7,6 +7,8 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
   const username = document.getElementById("username").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
+const loader = document.getElementById("loader");
+loader.classList.remove("hidden");   // before API call starts
 
   try {
     const res = await fetch(`${API_BASE}/auth/signup`, {
@@ -29,5 +31,7 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
   } catch (err) {
     document.getElementById("message").innerText = "Error connecting to server ❌";
   }
+  loader.classList.add("hidden");      // inside finally block (after API finishes)
+
 });
 
