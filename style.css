@@ -154,6 +154,7 @@ input#search {
 /* Loader */
 .loader {
   position: relative;
+  /* display: none; */
   width: 120px;
   height: 90px;
   margin: 0 auto;
@@ -215,4 +216,8 @@ input#search {
             -70px 90px 0 #f2f2f2,
             -70px 90px 0 rgba(0, 0, 0, 0);
   }
+}
+
+.d-none {
+  display: none !important;
 }

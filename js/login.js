@@ -26,7 +26,10 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
       // redirect based on role
       if (data.role === "admin") {
+        document.querySelector(".loader").style.display = "block";
+        
         window.location.href = "admin_books.html";
+      
       } else {
         window.location.href = "books.html";
       }
