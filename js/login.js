@@ -7,9 +7,6 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
-  const loader = document.getElementById("loader");
-
-loader.classList.remove("hidden");   // before API call starts
 
 
   try {
@@ -38,7 +35,5 @@ loader.classList.remove("hidden");   // before API call starts
     }
   } catch (err) {
     document.getElementById("message").innerText = "Error connecting to server ❌";
-    loader.classList.add("hidden");      // inside finally block (after API finishes)
-
   }
 });

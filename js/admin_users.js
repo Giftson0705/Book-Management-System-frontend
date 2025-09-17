@@ -6,8 +6,6 @@ const token = localStorage.getItem("token");
 if (!token) window.lsocation.href = "login.html";
 
 const usersList = document.getElementById("admin-users-list");
-const loader = document.getElementById("loader");
-loader.classList.remove("hidden");   // before API call starts
 
 
 async function fetchUsers() {
@@ -85,6 +83,4 @@ document.getElementById("logout-btn")?.addEventListener("click", () => {
 });
 
 fetchUsers();
-loader.classList.add("hidden");      // inside finally block (after API finishes)
-
 
