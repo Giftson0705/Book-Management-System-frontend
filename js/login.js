@@ -32,6 +32,8 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         window.location.href = "admin_books.html";
       
       } else {
+        document.querySelector(".loader").style.display = "block";
+
         window.location.href = "books.html";
       }
     } else {
