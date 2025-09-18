@@ -13,11 +13,10 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const res = await fetch(`${API_BASE}/auth/login`, {
       method: "POST",
       headers: { 
-        "Content-Type": "application/json" 
-      },
+        "Content-Type": "application/json"
+       },
       body: JSON.stringify({ username, password })
     });
-
     const data = await res.json();
 
     if (res.ok) {
