@@ -14,14 +14,14 @@ document.querySelector(".loader").style.display = "block";
       body: JSON.stringify({ username, email, password, role: "user" })
     });
     console.log("load")
-    // document.querySelector(".loader").style.display = "block";
+    document.querySelector(".loader").style.display = "block";
     // Try to parse JSON, but guard bad gateways
     let data = null;
     try { data = await res.json(); } catch {}
 
     if (res.ok) {
-      // alert("Signup successful ✅ Please login.");
-      // window.location.href = "login.html";
+      alert("Signup successful ✅ Please login.");
+      window.location.href = "login.html";
     } else {
       document.querySelector(".loader").style.display = "none";
       document.getElementById("message").innerText =
